@@ -1,0 +1,43 @@
+body {
+background-color: #F3E6D8;
+}
+h1{
+ color: #4B2E0F;
+}
+p{
+ color: #7B4F24;
+}
+h2{
+color: #4B2E0F;
+}
+ul{
+ color: #4B2E0F;
+}
+
+li{
+color: #7B4F24;
+}
+h3{
+color: #4B2E0F;
+}
+a{
+ color: #7B4F24;
+}
+h1{
+ font-family: 'playfair display', serif;
+}
+h2{
+font-family: 'playfair display', serif;
+}
+h3{
+ font-family: 'playfair display', serif;
+}
+p{
+ font-family: 'lora', serif;
+}
+li{
+ font-family: 'lora', serif;
+}
+a{
+ font-family: 'lora', serif;
+}
