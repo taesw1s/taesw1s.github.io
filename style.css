@@ -1,27 +1,38 @@
+p{
+    margin:2%;
+}
+body,h1, p, h2, p, ul, li{
+    font-family: sans-serif;
+}
+br{
+    font-family: sans-serif;
+    
+}
 body {
-background-color: #F3E6D8;
+background-color:#1a1a1a;
+color: #FFD700;
 }
 h1{
- color: #4B2E0F;
+ color:#FFD700;
 }
 p{
- color: #7B4F24;
+ color:#FFD700;
 }
 h2{
-color: #4B2E0F;
+color:#FFD700;
 }
 ul{
- color: #4B2E0F;
+ color:#FFD700;
 }
 
 li{
-color: #7B4F24;
+color:#FFD700;
 }
-h3{
-color: #4B2E0F;
+h3, h4{
+color:#FFD700;
 }
 a{
- color: #7B4F24;
+ color:#FFD700;
 }
 h1{
  font-family: 'playfair display', serif;
@@ -39,5 +50,9 @@ li{
  font-family: 'lora', serif;
 }
 a{
- font-family: 'lora', serif;
-}
+ font-family: 'lora', serif;}
+ button{
+    color: #1a1a1a;
+    background-color: rgb(0, 0, 0);
+ }
+ 
