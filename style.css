@@ -1,58 +1,117 @@
-p{
-    margin:2%;
-}
-body,h1, p, h2, p, ul, li{
-    font-family: sans-serif;
-}
-br{
-    font-family: sans-serif;
-    
-}
 body {
-background-color:#1a1a1a;
-color: #FFD700;
-}
-h1{
- color:#FFD700;
-}
-p{
- color:#FFD700;
-}
-h2{
-color:#FFD700;
-}
-ul{
- color:#FFD700;
+    background-color: #1a1a1a;
+    color: #FFD700;
+    font-family: 'lora', serif;
+    margin: 0;
+    padding: 0;
 }
 
-li{
-color:#FFD700;
+
+h1, h2, h3 {
+    color: #FFD700;
+    font-family: 'Playfair Display', serif;
+    margin: 1em 0 0.5em 0;
 }
-h3, h4{
-color:#FFD700;
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
 }
-a{
- color:#FFD700;
+
+h2 {
+    font-size: 2em;
+    margin-top: 2em;
 }
-h1{
- font-family: 'playfair display', serif;
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 1.5em;
 }
-h2{
-font-family: 'playfair display', serif;
+
+
+p, li {
+    color: #FFD700;
+    font-family: 'Lora', serif;
+    margin: 1em 2%;
+    line-height: 1.5em;
 }
-h3{
- font-family: 'playfair display', serif;
+
+ul {
+    margin-left: 2em;
 }
-p{
- font-family: 'lora', serif;
+
+
+a {
+    color: #FFD700;
+    text-decoration: none;
 }
-li{
- font-family: 'lora', serif;
+
+a:hover {
+    text-decoration: underline;
 }
-a{
- font-family: 'lora', serif;}
- button{
+
+
+button {
     color: #1a1a1a;
-    background-color: rgb(0, 0, 0);
- }
- 
+    background-color: #FFD700;
+    border: none;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    margin-top: 1em;
+    border-radius: 4px;
+}
+
+button a {
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+
+button:hover {
+    background-color: #e6c200;
+}
+
+#Прайс-лист, .V-Bucks {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 2em;
+}
+
+.V-Bucks img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+header {
+    text-align: center;
+    padding: 1em 0;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+    border-top: 1px solid #FFD700;
+}
+
+section {
+    padding: 1em 0;
+}
+.v-bucks{
+    text-align: center;
+}
+.fps{
+    text-align: center;
+}
+.fp{
+    text-align: center;
+}
+.coutch{
+    text-align: center;
+}
+.pr{
+    text-align: center;
+}
