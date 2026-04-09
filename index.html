@@ -1,291 +1,558 @@
 <!doctype html>
 <html lang="ru">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial;
-  overflow: hidden;
-}
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+      overflow: hidden;
+    }
 
-.book {
-  width: 700px;
-  height: 450px;
-  position: relative;
-  perspective: 2000px;
-}
+    .book {
+      width: 700px;
+      height: 450px;
+      position: relative;
+      perspective: 2000px;
+    }
 
-.page {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: white;
-  padding: 25px;
-  box-sizing: border-box;
-  border-radius: 12px;
-  transform-origin: left;
-  transition: transform 0.8s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  overflow-y: auto;
-}
+    .page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: white;
+      padding: 25px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      transform-origin: left;
+      transition: transform 0.8s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      overflow-y: auto;
+    }
 
-.page.flipped {
-  transform: rotateY(-180deg);
-}
+    .page.flipped {
+      transform: rotateY(-180deg);
+    }
 
-.center {
-  text-align: center;
-  margin-top: 100px;
-}
+    .center {
+      text-align: center;
+      margin-top: 100px;
+    }
 
-.menu button {
-  display: block;
-  margin: 10px auto;
-  padding: 12px 20px;
-  border: none;
-  background: #38bdf8;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
+    .menu button {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 20px;
+      border: none;
+      background: #38bdf8;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-.grid {
+   .grid {
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
-}
+  }
 
-.card {
-  width: 120px;
-  text-align: center;
-  cursor: pointer;
-}
+    .card {
+      width: 120px;
+      text-align: center;
+      cursor: pointer;
+    }
 
-.card:hover {
-  transform: scale(1.05);
-}
+    .card:hover {
+      transform: scale(1.05);
+    }
 
-.controls {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-}
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
 
-button.nav {
-  padding: 10px 20px;
-  border: none;
-  background: #38bdf8;
-  border-radius: 8px;
-  cursor: pointer;
-}
-</style>
+    button.nav {
+      padding: 10px 20px;
+      border: none;
+      background: #38bdf8;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="book">
+  <div class="book">
 
-<!-- 0 ТИТУЛЬНЫЙ ЛИСТ -->
-<div class="page">
-  <div class="center">
-    <h3>МБОУ Школа №156<br>г.о. Самара</h3>
-    <h1>Виртуальная книга<br>«История в лицах»</h1>
+    <!-- 0 ТИТУЛЬНЫЙ ЛИСТ -->
+    <div class="page">
+      <div class="center">
+        <h3>МБОУ Школа №156<br>г.о. Самара</h3>
+        <h1>Виртуальная книга<br>«История в лицах»</h1>
+      </div>
+    </div>
+
+    <!-- 1 ОГЛАВЛЕНИЕ -->
+    <div class="page">
+      <h2>📖 Оглавление</h2>
+      <div class="menu">
+        <button onclick="goToPage(2)">Композиторы</button>
+        <button onclick="goToPage(3)">Писатели, поэты</button>
+        <button onclick="goToPage(4)">Политики</button>
+        <button onclick="goToPage(5)">Учёные</button>
+        <button onclick="goToPage(6)">Художники</button>
+      </div>
+    </div>
+
+    <!-- 2 КОМПОЗИТОРЫ -->
+    <div class="page">
+      <h2>Композиторы</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(29)">
+          <img src="https://avatars.mds.yandex.net/i?id=104f04ef413da6cfb8f47d48518aa8a910c5a06a-5110056-images-thumbs&n=13" width="100" >
+          <p>Пётр Ильич Чайковский</p>
+        </div>
+        <div class="card" onclick="goToPage(32)">
+          <img src="https://avatars.mds.yandex.net/i?id=ddfe07eb57862a103a3a787e4bb7c3c111bfb025-4591612-images-thumbs&n=13" width="100" >
+          <p>Сергей Васильевич Рахманинов</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 ПИСАТЕЛИ -->
+    <div class="page">
+      <h2>Писатели и поэты</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(7)">
+          <img src="https://avatars.mds.yandex.net/i?id=3b064e62b971f710660fdb591384e486064a50ac-5858548-images-thumbs&n=13" width="100" >
+          <p>Алексей Николаевич Толстой</p>
+        </div>
+        <div class="card" onclick="goToPage(37)">
+          <img src="https://avatars.mds.yandex.net/i?id=c84fef2c35131b11438a4d9bbbef6485_l-5648447-images-thumbs&n=13&n=13&w=230&h=290" width="100" >
+          <p>Александр Сергеевич Пушкин</p>
+      </div>
+    </div>
+    </div>
+
+    <!-- 4 ПОЛИТИКИ -->
+    <div class="page">
+      <h2>Политики</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(10)">
+          <img src="https://avatars.mds.yandex.net/get-entity_search/2431491/1244825822/SUx182" width="100">
+          <p>Путин</p>
+        </div>
+        <div class="card" onclick="goToPage(12)">
+          <img src="https://avatars.mds.yandex.net/get-entity_search/2327175/1254345758/SUx182" width="100">
+          <p>Екатерина 2</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 УЧЁНЫЕ -->
+    <div class="page">
+      <h2>Учёные</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(15)">
+          <img src="https://avatars.mds.yandex.net/i?id=3c7f2835885b6f7049ac9d21e270f501d1fbec56-5124559-images-thumbs&n=13" width="100">
+          <p>Александр Степанович Попов</p>
+        </div>
+      </div>
+     
+      <div class="card" onclick="goToPage(17)">
+          <img src="https://avatars.mds.yandex.net/get-entity_search/4759071/1177894773/SUx182" width="100">
+          <p>Жорес Алфёров </p>
+      
+        </div>
+        <div class="card" onclick="goToPage(19)">
+          <img src="https://avatars.mds.yandex.net/i?id=aa77e4daff37aae21da74f7b9bf8f860592f84c4-11492249-images-thumbs&n=13" width="100">
+          <p>Исаак Ньютон </p>
+        </div>
+        <div class="card" onclick="goToPage(22)">
+          <img src="https://avatars.mds.yandex.net/i?id=c8d066fc3abfd305da08ccbd7a6f5866b713f970-4687669-images-thumbs&n=13" width="100">
+          <p>Дмитрий Иванович Сахаров </p>
+        </div>
+    </div>
+  
+  
+
+
+    <!-- 6 ХУДОЖНИКИ -->
+    <div class="page">
+      <h2>Художники</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(26)">
+          <img src="https://avatars.mds.yandex.net/get-entity_search/5103535/1259494529/SUx182" width="100>"
+          <p>Илья Ефимович Репин</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7 Толстой -->
+    <div class="page">
+      <h2>Учителя Толстого</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(8)">
+          <p>Аркадий Иванович Словохотов</p>
+        </div>
+        <div class="card" onclick="goToPage(9)">
+          <p>Алексей Ремизов</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8 ГАЛИЧ -->
+    <div class="page">
+      <h2>Аркадий Иванович Словохотов</h2>
+      <p>Одним из домашних учителей юного Алексея Толстого был Аркадий Иванович Словохотов. Он был не слишком
+        требователен и не перегружал учебными нагрузками воспитанника.
+        <br>После отъезда из Сосновки Аркадий Иванович не раз приезжал к своему бывшему ученику в гости, писал ему письма — и в Сосновку, и позже в Сызрань.
+
+      </p>
+    </div>
+
+    <!-- 9 КУНИЦЫН -->
+    <div class="page">
+      <h2>Алексей Ремизов</h2>
+      <p>Студенческие годы Толстой под влиянием Алексея Ремизова взялся за совершенствование языка.   <div>Деятельность
+        охватывала литературу, искусство и работу в театральной сфере.</p>
+    </div>
   </div>
-</div>
 
-<!-- 1 ОГЛАВЛЕНИЕ -->
-<div class="page">
-  <h2>📖 Оглавление</h2>
-  <div class="menu">
-    <button onclick="goToPage(2)">Композиторы</button>
-    <button onclick="goToPage(3)">Писатели, поэты</button>
-    <button onclick="goToPage(4)">Политики</button>
-    <button onclick="goToPage(5)">Учёные</button>
-    <button onclick="goToPage(6)">Художники</button>
+    <!-- 10 ПУТИН -->
+    <div class="page">
+      <h2>Учителя Путина</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(11)">
+          <p>Гуревич</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 11 ГУРЕВИЧ -->
+    <div class="page">
+      <h2>Вера Дмитриевна Гуревич</h2>
+      <p>Вера Гуревич была классным руководителем Владимира Путина с пятого по восьмой класс в школе №193 Ленинграда. Она работала преподавателем немецкого языка в этой же школе. Гуревич является автором мемуаров о школьных годах президента «Владимир Путин. Родители. Друзья. Учителя».</p>
+    </div>
+
+    <div= class="grid">
+    <div class="page">
+      <h2>Учителя Екатерины II</h2>
+    
+
+        <div class="card" onclick="goToPage(13)">
+          <p>Симон Тодорский</p>
+        </div>
+
+        <div class="card" onclick="goToPage(14)">
+          <p>Иоганн Гросс</p>
+        </div>
+
+    </div>
+    
+    
+
+    <div class="page">
+      <h2>Симон Тодорский</h2>
+      <p>
+        Преподаватель богословия и духовный наставник Екатерины II.
+        Обучал её религиозным основам и помогал в формировании мировоззрения.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Иоганн Гросс</h2>
+      <p>
+        Преподаватель немецкого языка и общего образования.
+        Помогал Екатерине развивать интеллект и любовь к наукам.
+      </p>
+    </div>
+
+    
+
+    
+
+    <div class="page">
+      <h2>Учителя Попова</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(16)">
+          <p>Эмилий Христианович Ленц</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Эмилий Христианович Ленц</h2>
+      <p>
+        Русский физик немецкого происхождения, академик Петербургской Академии наук, ректор Петербургского университета. Ленц стоял у истоков создания первой в России школы физиков-электротехников. Он был практиком и педагогом, воспитавшим плеяду ученых, включая Александра Попова (изобретателя радио) .
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Алфёрова</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(18)">
+          <p>Яков Борисович Мельцерзон</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Яков Борисович Мельцерзон</h2>
+      <p>
+        учитель физики, который сыграл значительную роль в формировании интереса Жореса Алфёрова к науке.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Ньютона</h2>
+      <div class="grid">
+
+        <div class="card" onclick="goToPage(20)">
+          <p>Бенджамин Пулейн </p>
+        </div>
+
+        <div class="card" onclick="goToPage(21)">
+          <p>Джон Валлис</p>
+        </div>
+        <div class="card" onclick="goToPage(35)">
+          <p>Мистер Стокс</p>
+        </div>
+        <div class="card" onclick="goToPage(36)">
+          <p>Аптекарь Кларк</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Бенджамин Пулейн</h2>
+      <p>
+        Бенджамин Пулейн  — наставник  Ньютона в Тринити колледже. Отвечал за академическую подготовку студентов, помогал осваивать латынь и базовые дисциплины.Начал читать лекции по математике в 1663 году — это пробудило у Ньютона глубокий интерес к предмету; автор работ по геометрии и оптике.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Джон Валлис</h2>
+      <p>
+        Джон Валлис  — влиятельный математик: его работы по бесконечным произведениям и анализу повлияли на методы Ньютона.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Сахарова  </h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(23)">
+          <p>Николай Егорович Жуковский</p>
+        </div>
+        <div class="card" onclick="goToPage(24)">
+          <p>Николай Алексеевич Умов </p>
+        </div>
+        <div class="card" onclick="goToPage(25)">
+          <p>Пётр Николаевич Лебедев</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Николай Егорович Жуковский</h2>
+      <p>
+        Николай Егорович Жуковский — выдающийся российский ученый, основоположник современной гидро- и аэродинамики, преподавал Дмитрию Ивановичу Сахарову.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Николай Алексеевич Умов  </h2>
+      <p>
+        Николай Алексеевич Умов  — выдающийся русский физик-теоретик, философ, космист и заслуженный профессор Московского университета. Преподавал Дмитрию Ивановичу Сахарову.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Пётр Николаевич Лебедев</h2>
+      <p>
+        Пётр Николаевич Лебедев — выдающийся русский физик-экспериментатор, первым доказавший существование светового давления. Преподавал Дмитрию Ивановичу Сахарову.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Репина </h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(27)">
+          <p>Иван Михайлович Бунаков</p>
+        </div>
+        <div class="card" onclick="goToPage(28)">
+          <p>Иван Николаевич Крамской</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Иван Михайлович Бунаков </h2>
+      <p>
+       Иван Михайлович Бунаков — мастер, представитель художественной династии. Бунаков был не только иконописцем, но и талантливым портретистом.
+       <br>Влияние Бунакова заложило фундамент мастерства Репина и показало ему силу реалистического изображения.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Иван Николаевич Крамской</h2>
+      <p>
+        Отчислился из Академии, основал сначала Артель свободных художников, а позже стал одним из учредителей Товарищества передвижников.
+        <br>Параллельно Крамской писал портреты, давал уроки рисования в Обществе поощрения художников.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Чайковского </h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(30)">
+          <p>Николай Заремба</p>
+        </div>
+        <div class="card" onclick="goToPage(31)">
+          <p>Антон Рубинштейн</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="page">
+      <h2>Николай Заремба</h2>
+      <p>
+       Иван Михайлович Бунаков — мастер, представитель художественной династии. Бунаков был не только иконописцем, но и талантливым портретистом.
+       <br>Влияние Бунакова заложило фундамент мастерства Репина и показало ему силу реалистического изображения.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Антон Григорьевич Рубинштейн</h2>
+      <p>
+        Важную роль в биографии Чайковского сыграл его учитель, пианист, дирижер, педагог, основатель первой русской консерватории в Санкт-Петербурге, её директор и профессор.</p>
+       <p> В 1862 году на базе музыкальных классов Русского музыкального общества (РМО) была открыта первая в России Петербургская консерватория. Рубинштейн стал её первым директором, дирижёром оркестра и профессором, ведя классы фортепиано, ансамбля и инструментовки.
+        <br>Разработал множество методических пособий и учебных программ.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Рахманинова </h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(33)">
+          <p>Николай Сергеевич Зверев</p>
+        </div>
+        <div class="card" onclick="goToPage(34)">
+          <p>Александр Ильич Зилоти</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Николай Сергеевич Зверев </h2>
+      <p>
+       Рахманинов проучился у Зверева с 1885 по 1889 годы.(Пианист и педагог).</p>
+       <p>Зверев был специалистом в области подготовительной стадии обучения игре на фортепиано. Основой педагогического метода было развитие у учеников способности различать детали нюансировки темпа, динамики, ритма. 
+ </p>
+    </div>
+
+    <div class="page">
+      <h2>Александр Ильич Зилоти</h2>
+      <p>
+        класс Зилоти на старшем отделении Московской консерватории. «слово и дело» Зилоти имели большое значение для становления Рахманинова как пианиста. (пианист, дирижер, музыкально-общественный деятель и педагог).
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Мистер Стокс</h2>
+      <p>
+        Мистер Стокс — директор и учитель Грэнтемской школы. Разглядел талант Исаака, убедил мать продолжить его образование.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Аптекарь Кларк</h2>
+      <p>
+        Аптекарь Кларк — у него Ньютон жил во время учёбы в Грэнтеме. Способствовал развитию интереса к науке и экспериментам.
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Учителя Пушкина</h2>
+      <div class="grid">
+        <div class="card" onclick="goToPage(38)">
+          <p>Александр Петрович Куницын </p>
+        </div>
+        <div class="card" onclick="goToPage(39)">
+          <p>Николай Фёдорович Кошанский</p>
+        </div>
+        <div class="card" onclick="goToPage(40)">
+          <p>Александр Иванович Галич </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="page">
+      <h2>Александр Петрович Куницын</h2>
+      <p>
+        Александр Петрович Куницын — преподавал нравственные и политические науки (логику, этику, право). Его лекции о свободе для народа и ограничении власти повлияли на молодого поэта и породили вольнолюбивую лирику. Пушкин посвятил Куницыну строки в стихотворении «19 октября»: «Куницыну дань сердца и вина! Он создал нас, он воспитал наш пламень…».
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Николай Фёдорович Кошанский</h2>
+      <p>
+        Николай Фёдорович Кошанский — преподавал российскую словесность и латинский язык. Хотя Пушкин называл его «угрюмым цензором», профессор старался вести лекции интересно, что привлекало внимание учеников. 
+
+      </p>
+    </div>
+
+    <div class="page">
+      <h2>Александр Иванович Галич</h2>
+      <p>
+        Александр Иванович Галич — заменял Кошанского, когда тот был на лечении. На уроках он общался с лицеистами, устраивал философские диспуты и соревнования по ораторскому искусству. Галич поощрял талант Пушкина и оказал значительное влияние на его становление в творчестве. Пушкин посвятил ему несколько стихотворений, в том числе «Послание к Галичу». 
+
+      </p>
+    </div>
+    
+
+
+
+
+
+  
+  
+  
+
+     
+       
+  
+  
+
+
+
+
   </div>
-</div>
 
-<!-- 2 КОМПОЗИТОРЫ -->
-<div class="page">
-  <h2>Композиторы</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(15)">
-   <img src="https://avatars.mds.yandex.net/get-entity_search/10920629/1255624747/SUx182" width="100" >
-   <p>Пётр Ильич Чайковский</p>
-    </div>
-</div>
-</div>
-
-<!-- 3 ПИСАТЕЛИ -->
-<div class="page">
-  <h2>Писатели и поэты</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(7)">
-   <img src="https://avatars.mds.yandex.net/get-entity_search/2044927/1254583422/SUx182" width="100" >
-   <p>А.Толстой</p>
-    </div>
+  <!-- КНОПКИ -->
+  <div class="controls">
+    <button class="nav" onclick="goBack()">⬅ Назад</button>
+    <button class="nav" onclick="nextPage()">Вперёд ➡</button>
   </div>
-</div>
 
-<!-- 4 ПОЛИТИКИ -->
-<div class="page">
-  <h2>Политики</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(10)">
-      <img src="https://avatars.mds.yandex.net/get-entity_search/2431491/1244825822/SUx182" width="100">
-      <p>Путин</p>
-    </div>
-    <div class="card" onclick="goToPage(12)">
-      <img src="https://avatars.mds.yandex.net/get-entity_search/2327175/1254345758/SUx182" width="100">
-      <p>Екатерина 2</p>
-    </div>
-  </div>
-</div>
-
-<!-- 5 УЧЁНЫЕ -->
-<div class="page">
-  <h2>Учёные</h2>
-  <p>Добавь учёных</p>
-</div>
-
-<!-- 6 ХУДОЖНИКИ -->
-<div class="page">
-  <h2>Художники</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(12)">
-      <p>Репин</p>
-    </div>
-  </div>
-</div>
-
-<!-- 7 Толстой -->
-<div class="page">
-  <h2>Учителя Толстого</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(8)">
-      <p>Аркадий Иванович Словохотов</p>
-    </div>
-    <div class="card" onclick="goToPage(9)">
-      <p>Алексей Ремизов</p>
-    </div>
-  </div>
-</div>
-
-<!-- 8 ГАЛИЧ -->
-<div class="page">
-  <h2>Аркадий Иванович Словохотов</h2>
-  <p>Одним из домашних учителей юного Алексея Толстого был Аркадий Иванович Словохотов. Он был не слишком требователен и не перегружал учебными нагрузками воспитанника.
-    <br>После отъезда из Сосновки Аркадий Иванович не раз приезжал к своему бывшему ученику в гости, писал ему письма — и в Сосновку, и позже в Сызрань. 
-
-  </p>
-</div>
-
-<!-- 9 КУНИЦЫН -->
-<div class="page">
-  <h2>Алексей Ремизов</h2>
-  <p>Студенческие годы Толстой под влиянием Алексея Ремизова взялся за совершенствование языка. (Деятельность охватывала литературу, искусство и работу в театральной сфере.</p>
-</div>
-
-<!-- 10 ПУТИН -->
-<div class="page">
-  <h2>Учителя Путина</h2>
-  <div class="grid">
-    <div class="card" onclick="goToPage(11)">
-      <p>Гуревич</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- 11 ГУРЕВИЧ -->
-<div class="page">
-  <h2>Вера Дмитриевна Гуревич</h2>
-  <p>Учитель немецкого языка и классный руководитель.</p>
-</div>
-
-<div class="page">
-  <h2>Учителя Екатерины II</h2>
-  <div class="grid">
-
-    <div class="card" onclick="goToPage(13)">
-      <p>Симон Тодорский</p>
-    </div>
-
-    <div class="card" onclick="goToPage(14)">
-      <p>Иоганн Гросс</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="page">
-  <h2>Симон Тодорский</h2>
-  <p>
-    Преподаватель богословия и духовный наставник Екатерины II.
-    Обучал её религиозным основам и помогал в формировании мировоззрения.
-  </p>
-</div>
-
-<div class="page">
-  <h2>Иоганн Гросс</h2>
-  <p>
-    Преподаватель немецкого языка и общего образования.
-    Помогал Екатерине развивать интеллект и любовь к наукам.
-  </p>
-</div>
-
-<div class="page">
-  <h2>Учителя Чайковского</h2>
-  <div class="grid">
-
-    <div class="card" onclick="goToPage(16)">
-      <p>Антон Рубинштейн</p>
-    </div>
-
-    <div class="card" onclick="goToPage(17)">
-      <p>Николай Заремба</p>
-    </div>
-
-  </div>
-</div>
-
-<div class="page">
-  <h2>Антон Рубинштейн</h2>
-  <p>
-    Основатель Санкт-Петербургской консерватории и один из главных наставников Чайковского.
-    Обучал его композиции и оказал большое влияние на становление как композитора.
-  </p>
-</div>
-
-<div class="page">
-  <h2>Николай Заремба</h2>
-  <p>
-    Преподаватель теории музыки в консерватории.
-    Дал Чайковскому фундаментальные знания музыкальной теории и гармонии.
-  </p>
-</div>
-
-</div>
-
-<!-- КНОПКИ -->
-<div class="controls">
-  <button class="nav" onclick="goBack()">⬅ Назад</button>
-  <button class="nav" onclick="nextPage()">Вперёд ➡</button>
-</div>
-
-<script>
-const pages = document.querySelectorAll(".page");
+  <script>
+    const pages = document.querySelectorAll(".page");
 let current = 0;
 let historyStack = [];
 
@@ -339,7 +606,8 @@ window.onload = () => {
   historyStack = [];
   updateZ();
 };
-</script>
+  </script>
 
 </body>
+
 </html>
